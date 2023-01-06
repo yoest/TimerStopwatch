@@ -9,12 +9,12 @@ import org.junit.Before;
 public abstract class TestGUIAbstract {
 
 	protected Context c;
-	protected SwingGUI g;
+	protected TestGUI g;
 
     @Before
     public void setup() {
     	c = new Context();
-    	g = new SwingGUI(c);
+    	g = new TestGUI(c);
     	//before each test, reset the timer values to avoid interference between tests:
     	AbstractTimer.resetInitialValues();
     }

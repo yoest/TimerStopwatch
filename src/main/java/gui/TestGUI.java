@@ -4,14 +4,13 @@ import states.Context;
 import states.EventListener;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class SwingGUI extends AbstractGUI {
-    
+public class TestGUI extends AbstractGUI {
+
     public JButton b1, b2, b3;
     public JLabel myText1, myText2, myText3;
-        
-    public SwingGUI(EventListener o) { super(o); }
+
+    public TestGUI(EventListener o) { super(o); }
     
     protected void initGUI() {
         b1 = new JButton();
@@ -21,21 +20,21 @@ public class SwingGUI extends AbstractGUI {
         myText2 = new JLabel();
         myText3 = new JLabel();
 
-        JFrame myFrame = new JFrame("Chronometer");
-        Container myContent = myFrame.getContentPane();
+        //JFrame myFrame = new JFrame("Chronometer");
+        //Container myContent = myFrame.getContentPane();
         // grid layout with 2 rows and 3 columns
-        myContent.setLayout(new GridLayout(2,3,1,1));
+        //myContent.setLayout(new GridLayout(2,3,1,1));
         // filling first row of grid (3 columns) with text information
-        myContent.add(myText1,0);
-        myContent.add(myText2,1);
-        myContent.add(myText3,2);
+        //myContent.add(myText1,0);
+        //myContent.add(myText2,1);
+        //myContent.add(myText3,2);
         // filling second row of grid (3 columns) with buttons
-        myContent.add(b1);
-        myContent.add(b2);
-        myContent.add(b3);
-        myFrame.pack();
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setVisible(true);
+        //myContent.add(b1);
+        //myContent.add(b2);
+        //myContent.add(b3);
+        //myFrame.pack();
+        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //myFrame.setVisible(true);
     }
 
     protected void addEventListener() {
