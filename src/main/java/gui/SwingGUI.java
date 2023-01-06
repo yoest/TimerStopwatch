@@ -3,23 +3,20 @@ package gui;
 import states.Context;
 import states.EventListener;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import java.awt.Container;
+import java.awt.GridLayout;
 
-public class SwingGUI extends AbstractGUI {
-    
-    public JButton b1, b2, b3;
-    public JLabel myText1, myText2, myText3;
-        
+/**
+ * @author tommens
+ * This class extends the HeadlessGUI to draw a real GUI on the screen
+ */
+public class SwingGUI extends HeadlessGUI {
+
     public SwingGUI(EventListener o) { super(o); }
     
     protected void initGUI() {
-        b1 = new JButton();
-        b2 = new JButton();
-        b3 = new JButton();
-        myText1 = new JLabel();
-        myText2 = new JLabel();
-        myText3 = new JLabel();
+        super.initGUI();
 
         JFrame myFrame = new JFrame("Chronometer");
         Container myContent = myFrame.getContentPane();
@@ -36,23 +33,6 @@ public class SwingGUI extends AbstractGUI {
         myFrame.pack();
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setVisible(true);
-    }
-
-    protected void addEventListener() {
-    	// compact way of adding action listeners (since Java8, using lambda expressions)
-    	b1.addActionListener(e -> observer.left());
-        b2.addActionListener(e -> observer.up());
-        b3.addActionListener(e -> observer.right());
-   }
-    
-    public void updateUI(Context c) {
-        myText1.setText(c.getDisplayText());
-        myText2.setText(c.getModeText());
-        myText3.setText(c.getStateText());
-        // update the button labels:
-        b1.setText(c.getLeftText());
-        b2.setText(c.getUpText());
-        b3.setText(c.getRightText());
     }
        
 }

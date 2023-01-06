@@ -3,38 +3,32 @@ package gui;
 import states.Context;
 import states.EventListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
-public class TestGUI extends AbstractGUI {
+/**
+ * @author tommens
+ * This class represents a Headless GUI, which is a GUI that is never drawn on the screen,
+ * even though it contains real buttons and labels. They are just not visible to the user.
+ * Why is this useful? To be able to run automated tests on the GUI in headless mode
+ * on remote servers that do not have a screen, without getting a Headless exception error.
+ * In order to create a real Swing GUI, use the SwingGUI subclass of HeadlessGUI.
+ */
+public class HeadlessGUI extends AbstractGUI {
 
     public JButton b1, b2, b3;
     public JLabel myText1, myText2, myText3;
 
-    public TestGUI(EventListener o) { super(o); }
+    public HeadlessGUI(EventListener o) { super(o); }
     
     protected void initGUI() {
+        //Notice that we initialise three buttons and three labels but we never display them.
         b1 = new JButton();
         b2 = new JButton();
         b3 = new JButton();
         myText1 = new JLabel();
         myText2 = new JLabel();
         myText3 = new JLabel();
-
-        //JFrame myFrame = new JFrame("Chronometer");
-        //Container myContent = myFrame.getContentPane();
-        // grid layout with 2 rows and 3 columns
-        //myContent.setLayout(new GridLayout(2,3,1,1));
-        // filling first row of grid (3 columns) with text information
-        //myContent.add(myText1,0);
-        //myContent.add(myText2,1);
-        //myContent.add(myText3,2);
-        // filling second row of grid (3 columns) with buttons
-        //myContent.add(b1);
-        //myContent.add(b2);
-        //myContent.add(b3);
-        //myFrame.pack();
-        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //myFrame.setVisible(true);
     }
 
     protected void addEventListener() {

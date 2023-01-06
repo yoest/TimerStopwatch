@@ -5,11 +5,6 @@ import org.junit.*;
 
 public class TestStopwatchLabels extends TestGUIAbstract {
 
-    @Before
-    public void setup() {
-    	super.setup();
-    }
-    
     @Test
     public void testStopwatch1() {
     	c.left(); //simulate clicking on the left button

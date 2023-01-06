@@ -9,12 +9,18 @@ import org.junit.Before;
 public abstract class TestGUIAbstract {
 
 	protected Context c;
-	protected TestGUI g;
+	protected HeadlessGUI g;
 
     @Before
     public void setup() {
     	c = new Context();
-    	g = new TestGUI(c);
+
+		// Run the GUI tests with the HeadlessGUI to ensure that
+		// the GUI tests also work with the automatic build on GitHub:
+    	g = new HeadlessGUI(c);
+		// Replacing HeadlessGUI by SwingGUI in the line above should still work locally,
+		// but throws a Headless exception when running the tests on GitHub
+
     	//before each test, reset the timer values to avoid interference between tests:
     	AbstractTimer.resetInitialValues();
     }
