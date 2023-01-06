@@ -9,3 +9,4 @@ target/
 ### Mac OS ###
 .DS_Store
 /.idea/
+/TimerStopwatch/.idea/workspace.xml
