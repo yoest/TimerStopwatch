@@ -1,7 +1,19 @@
 Code quality: ![Maven Build](https://github.com/tommens/calculator-cucumber/actions/workflows/maven.yml/badge.svg)
 
 # TimerStopwatch
-Java implementation of a statechart with Timer and Stopwatch functionality
+Java implementation of a statechart with Timer and Stopwatch functionality.
+This repository contains a simple example used for teaching purposes by Tom Mens at the University of Mons.
+The example is an event-based application for a timer and stopwatch. It can be controlled through 3 buttons/events.
+The example comes with UML models (created with Visual Paradigm) and executable statechart models (created with Yakindu).
+
+The aim of the example is to illustrate how to model composite statecharts, 
+how to implement them in Java in object-oriented style using the State Design Pattern,
+and how to test them with JUnit unit tests.
+
+
+### Video Tutorial
+See https://www.youtube.com/watch?v=5uYOPUj5J3Q
+for a tutorial on YouTube that explains (a perhaps slightly older version of) this example Java source code.
 
 ### Prerequisites
 
