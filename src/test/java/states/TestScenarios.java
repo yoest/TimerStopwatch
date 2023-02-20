@@ -90,7 +90,9 @@ public class TestScenarios {
 	  c.tick();
 	  assertSame(IdleTimer.Instance(), c.currentState);
 	  assertEquals("value of memTimer ", 2, AbstractTimer.getMemTimer());
-	  assertEquals("value of timer ", 0, AbstractTimer.getTimer());	 	  
-	  }
+	  assertEquals("value of timer ", 0, AbstractTimer.getTimer());
 
+	  // Test some functions that are not tested
+	  assertEquals("Value of getUpText ", "unsplit", LaptimeStopwatch.Instance().getUpText());
+	  }
 }
